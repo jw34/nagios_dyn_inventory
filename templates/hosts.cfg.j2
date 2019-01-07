@@ -1,0 +1,9 @@
+define host{
+        use            linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+        host_name      {{ inst_nm }}
+        hostgroups     {{ inst_rl }}
+        alias          {{ inst_nm }}.yourdomain.com
+        address        {{ inst_ip }}
+}
